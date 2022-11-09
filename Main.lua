@@ -154,7 +154,7 @@ if game.PlaceId == 6839171747 then
 			Event:FireServer()
         	end 
 	end)
-	MainSection:NewButton("Steal Gold", "RAAAAHHHHHH", function(state)
+	MainSection:NewButton("Steal Gold (Teleports)", "RAAAAHHHHHH", function(state)
 
 		local UIS = game:GetService("UserInputService")
 		local CF = CFrame.new
