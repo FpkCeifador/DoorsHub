@@ -139,7 +139,7 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
 		end)
 	end)
 
-	MainSection:NewButton("Complete Breaker Box", "RAAAAHHHHHH", function(state)
+	MainSection:NewButton("Complete Breaker Box (PATCHED!)", "RAAAAHHHHHH", function(state)
 		Callback = function()
 			local Event = game:GetService("ReplicatedStorage").Bricks.EBF
 			Event:FireServer()
