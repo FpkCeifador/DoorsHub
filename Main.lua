@@ -255,36 +255,6 @@ if game.PlaceId == 6839171747 then
 		end
     end)
 
-	MainSection:NewToggle("Allow Jumping (J)", "RAAAAHHHHHH", function(state)
-		local Keybind = Enum.KeyCode.J
-		local UIS = game:GetService("UserInputService")
-		UIS.InputBegan:Connect(function(input, typing)
-			if typing then return end
-			if input.KeyCode == Keybind then
-				pcall(function()
-					_G.infinjum = not _G.infinjum
-					_G.infinJumStarted = true
-					if state then
-						game.StarterGui:SetCore("SendNotification", {Title="FPK_Cheats"; Text="Infinite Jump exploit is on!"; Duration=5;})
-						local plr = game:GetService('Players').LocalPlayer
-						local m = plr:GetMouse()
-						m.KeyDown:connect(function(k)
-							if _G.infinjum then
-								if k:byte() == 32 then
-									local humanoid = char.Humanoid
-									humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-								end
-							end
-						end)
-					else
-						print("...")
-					end
-				end)
-			end
-		end)
-
-	end)
-
 	MainSection:NewToggle("Remove Fake Doors", "bro", function(state)
 		if state then
 			_G.UO = true
