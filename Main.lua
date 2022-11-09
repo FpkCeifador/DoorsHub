@@ -154,7 +154,7 @@ if game.PlaceId == 6839171747 then
 			Event:FireServer()
         	end 
 	end)
-	MainSection:NewToggle("Get Gold (G)", "RAAAAHHHHHH", function(state)
+	MainSection:NewButton("Steal Gold", "RAAAAHHHHHH", function(state)
 		local Keybind = Enum.KeyCode.G
 
 		local UIS = game:GetService("UserInputService")
@@ -163,8 +163,9 @@ if game.PlaceId == 6839171747 then
 
 		UIS.InputBegan:Connect(function(input, typing)
 			if typing then return end
-			if input.KeyCode == Keybind then
+			while true do
 				pcall(function()
+					wait(0.01)
 					local GoldPile = false
 					local CurrentDoor = workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Door")
 					for i,object in ipairs(CurrentDoor.Parent:GetDescendants()) do
