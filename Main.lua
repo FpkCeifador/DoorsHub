@@ -1213,7 +1213,6 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
 	end)
     end)
 	
-    visSection:NewLabel("Key Chams")
 	
     visSection:NewButton("Apply Key Chams", "RAAAAHHHHHH", function(state)
         local KeyChams = {}    
