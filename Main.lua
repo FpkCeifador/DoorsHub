@@ -1,6 +1,11 @@
 if game.PlaceId == 6516141723 then
-    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    game.StarterGui:SetCore("SendNotification", {Title="Error"; Text="Join A Game Lobby First.!"; Duration=5;})
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+	OrionLib:MakeNotification({
+        	Name = "Warning!",
+                Content = "Avoiding Rush. Please wait.",
+                Time = 5
+        })
+end
 
 if game.PlaceId == 6839171747 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
