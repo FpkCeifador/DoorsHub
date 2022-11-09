@@ -4,7 +4,7 @@ if game.PlaceId == 6516141723 then
         	Name = "Error!",
                 Content = "Join A Game Lobby First.",
                 Time = 10
-        })
+        }) 
 end
 
 if game.PlaceId == 6839171747 then
