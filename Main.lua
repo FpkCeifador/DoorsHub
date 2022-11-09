@@ -1375,6 +1375,70 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
         end
         coroutine.resume(KeyCoroutine)
     end)
+	
+    visSection:NewLabel("Lever Chams")
+	
+    visSection:NewButton("Apply Lever Chams", "RAAAAHHHHHH", function(state)
+        local KeyChams = {}    
+        local function ApplyKeyChams(inst)
+            wait()
+            local Cham = Instance.new("Highlight")
+            Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            Cham.FillColor = Color3.new(0.980392, 0.670588, 0)
+            Cham.FillTransparency = 0.5
+            Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+            Cham.Parent = game:GetService("CoreGui")
+            Cham.Adornee = inst
+            Cham.Enabled = true
+            Cham.RobloxLocked = true
+            return Cham
+        end
+        
+        local KeyCoroutine = coroutine.create(function()
+            workspace.CurrentRooms.DescendantAdded:Connect(function(inst)
+                if inst.Name == "LeverForGate" then
+                    table.insert(KeyChams,ApplyKeyChams(inst))
+                end
+            end)
+        end)
+        for i,v in ipairs(workspace:GetDescendants()) do
+            if v.Name == "LeverForGate" then
+                table.insert(KeyChams,ApplyKeyChams(v))
+            end
+        end
+        coroutine.resume(KeyCoroutine)
+    end)
+	
+    visSection:NewButton("Disable Lever Chams", "RAAAAHHHHHH", function(state)
+        local KeyChams = {}    
+        local function ApplyKeyChams(inst)
+            wait()
+            local Cham = Instance.new("Highlight")
+            Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            Cham.FillColor = Color3.new(0.980392, 0.670588, 0)
+            Cham.FillTransparency = 0.5
+            Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+            Cham.Parent = game:GetService("CoreGui")
+            Cham.Adornee = inst
+            Cham.Enabled = false
+            Cham.RobloxLocked = true
+            return Cham
+        end
+        
+        local KeyCoroutine = coroutine.create(function()
+            workspace.CurrentRooms.DescendantAdded:Connect(function(inst)
+                if inst.Name == "LeverForGate" then
+                    table.insert(KeyChams,ApplyKeyChams(inst))
+                end
+            end)
+        end)
+        for i,v in ipairs(workspace:GetDescendants()) do
+            if v.Name == "LeverForGate" then
+                table.insert(KeyChams,ApplyKeyChams(v))
+            end
+        end
+        coroutine.resume(KeyCoroutine)
+    end)
 
     --Other
     local Other = Window:NewTab("Other")
