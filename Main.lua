@@ -22,43 +22,6 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
     end
     Unlock(nil,"Join")
 
-    MainSection:NewToggle("Key Chams", "RAAAAHHHHHH", function(state)
-        if state then
-            _G.PP = true
-        else
-            _G.PP = false
-            Cham.Destroy()
-        end
-        local KeyChams = {}    
-        local function ApplyKeyChams(inst)
-            wait()
-            local Cham = Instance.new("Highlight")
-            Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-            Cham.FillColor = Color3.new(0.980392, 0.670588, 0)
-            Cham.FillTransparency = 0.5
-            Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
-            Cham.Parent = game:GetService("CoreGui")
-            Cham.Adornee = inst
-            Cham.Enabled = _G.PP
-            Cham.RobloxLocked = true
-            return Cham
-        end
-        
-        local KeyCoroutine = coroutine.create(function()
-            workspace.CurrentRooms.DescendantAdded:Connect(function(inst)
-                if inst.Name == "KeyObtain" and _G.PP == true then
-                    table.insert(KeyChams,ApplyKeyChams(inst))
-                end
-            end)
-        end)
-        for i,v in ipairs(workspace:GetDescendants()) do
-            if v.Name == "KeyObtain" and _G.PP == true then
-                table.insert(KeyChams,ApplyKeyChams(v))
-            end
-        end
-        coroutine.resume(KeyCoroutine)
-    end)
-
 	MainSection:NewToggle("Instant Interact", "RAAAAHHHHHH", function(state)
 		if state then
 			_G.UOp = true
@@ -968,10 +931,29 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
             end
         end)
     end)
+	
+    iteSection:NewButton("Get BTools", "Gives You Mod Tools", function()
+        backpack = game:GetService("Players").LocalPlayer.Backpack
+
+        hammer = Instance.new("HopperBin")
+        hammer.Name = "Hammer"
+        hammer.BinType = 4
+        hammer.Parent = backpack
+        
+        cloneTool = Instance.new("HopperBin")
+        cloneTool.Name = "Clone"
+        cloneTool.BinType = 3
+        cloneTool.Parent = backpack
+        
+        grabTool = Instance.new("HopperBin")
+        grabTool.Name = "Grab"
+        grabTool.BinType = 2
+        grabTool.Parent = backpack
+    end)
 
     --LOCAL PLAYER
     local vis = Window:NewTab("Visuals")
-    local visSection = vis:NewSection("Chams")
+    local visSection = vis:NewSection("Player Chams")
 
     visSection:NewButton("Apply Player Chams", "ye", function()
         local dwEntities = game:GetService("Players")
@@ -1229,6 +1211,134 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
 	    end
 
 	end)
+    end)
+	
+    visSection:NewLabel("Key Chams")
+	
+    visSection:NewToggle("Apply Key Chams", "RAAAAHHHHHH", function(state)
+        local KeyChams = {}    
+        local function ApplyKeyChams(inst)
+            wait()
+            local Cham = Instance.new("Highlight")
+            Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            Cham.FillColor = Color3.new(0.980392, 0.670588, 0)
+            Cham.FillTransparency = 0.5
+            Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+            Cham.Parent = game:GetService("CoreGui")
+            Cham.Adornee = inst
+            Cham.Enabled = true
+            Cham.RobloxLocked = true
+            return Cham
+        end
+        
+        local KeyCoroutine = coroutine.create(function()
+            workspace.CurrentRooms.DescendantAdded:Connect(function(inst)
+                if inst.Name == "KeyObtain" then
+                    table.insert(KeyChams,ApplyKeyChams(inst))
+                end
+            end)
+        end)
+        for i,v in ipairs(workspace:GetDescendants()) do
+            if v.Name == "KeyObtain" then
+                table.insert(KeyChams,ApplyKeyChams(v))
+            end
+        end
+        coroutine.resume(KeyCoroutine)
+    end)
+	
+    visSection:NewToggle("Disable Key Chams", "RAAAAHHHHHH", function(state)
+        local KeyChams = {}    
+        local function ApplyKeyChams(inst)
+            wait()
+            local Cham = Instance.new("Highlight")
+            Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            Cham.FillColor = Color3.new(0.980392, 0.670588, 0)
+            Cham.FillTransparency = 0.5
+            Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+            Cham.Parent = game:GetService("CoreGui")
+            Cham.Adornee = inst
+            Cham.Enabled = false
+            Cham.RobloxLocked = true
+            return Cham
+        end
+        
+        local KeyCoroutine = coroutine.create(function()
+            workspace.CurrentRooms.DescendantAdded:Connect(function(inst)
+                if inst.Name == "KeyObtain" then
+                    table.insert(KeyChams,ApplyKeyChams(inst))
+                end
+            end)
+        end)
+        for i,v in ipairs(workspace:GetDescendants()) do
+            if v.Name == "KeyObtain" then
+                table.insert(KeyChams,ApplyKeyChams(v))
+            end
+        end
+        coroutine.resume(KeyCoroutine)
+    end)
+	
+    visSection:NewLabel("Book Chams")
+	
+    visSection:NewToggle("Apply Book Chams", "RAAAAHHHHHH", function(state)
+        local KeyChams = {}    
+        local function ApplyKeyChams(inst)
+            wait()
+            local Cham = Instance.new("Highlight")
+            Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            Cham.FillColor = Color3.new(0.980392, 0.670588, 0)
+            Cham.FillTransparency = 0.5
+            Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+            Cham.Parent = game:GetService("CoreGui")
+            Cham.Adornee = inst
+            Cham.Enabled = true
+            Cham.RobloxLocked = true
+            return Cham
+        end
+        
+        local KeyCoroutine = coroutine.create(function()
+            workspace.CurrentRooms.DescendantAdded:Connect(function(inst)
+                if inst.Name == "LiveHintBook" then
+                    table.insert(KeyChams,ApplyKeyChams(inst))
+                end
+            end)
+        end)
+        for i,v in ipairs(workspace:GetDescendants()) do
+            if v.Name == "LiveHintBook" then
+                table.insert(KeyChams,ApplyKeyChams(v))
+            end
+        end
+        coroutine.resume(KeyCoroutine)
+    end)
+	
+    visSection:NewToggle("Disable Book Chams", "RAAAAHHHHHH", function(state)
+        local KeyChams = {}    
+        local function ApplyKeyChams(inst)
+            wait()
+            local Cham = Instance.new("Highlight")
+            Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            Cham.FillColor = Color3.new(0.980392, 0.670588, 0)
+            Cham.FillTransparency = 0.5
+            Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+            Cham.Parent = game:GetService("CoreGui")
+            Cham.Adornee = inst
+            Cham.Enabled = false
+            Cham.RobloxLocked = true
+            return Cham
+        end
+        
+        local KeyCoroutine = coroutine.create(function()
+            workspace.CurrentRooms.DescendantAdded:Connect(function(inst)
+                if inst.Name == "LiveHintBook" then
+                    table.insert(KeyChams,ApplyKeyChams(inst))
+                end
+            end)
+        end)
+        for i,v in ipairs(workspace:GetDescendants()) do
+            if v.Name == "LiveHintBook" then
+                table.insert(KeyChams,ApplyKeyChams(v))
+            end
+        end
+        coroutine.resume(KeyCoroutine)
     end)
 
     --Other
