@@ -908,8 +908,8 @@ if game.PlaceId == 6839171747 then
 	    ESP_TeamCheck = false,
 	    Chams = true,
 	    Chams_Color = Color3.fromRGB(0,0,255),
-	    Chams_Transparency = 0.1,
-	    Chams_Glow_Color = Color3.fromRGB(255,0,0)
+	    Chams_Transparency = 0.5,
+	    Chams_Glow_Color = Color3.fromRGB(0,255,0)
 	}
 
 	function destroy_chams(char)
