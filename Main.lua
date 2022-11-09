@@ -141,8 +141,9 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
 
 	MainSection:NewButton("Complete Breaker Box", "RAAAAHHHHHH", function(state)
 		Callback = function()
-            game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
-        end 
+			local Event = game:GetService("ReplicatedStorage").Bricks.EBF
+			Event:FireServer()
+        	end 
 	end)
 	MainSection:NewToggle("Get Gold (G)", "RAAAAHHHHHH", function(state)
 		local Keybind = Enum.KeyCode.G
