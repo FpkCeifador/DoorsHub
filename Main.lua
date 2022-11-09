@@ -154,30 +154,33 @@ if game.PlaceId == 6839171747 then
 			Event:FireServer()
         	end 
 	end)
-	MainSection:NewButton("Steal Gold (Teleports)", "RAAAAHHHHHH", function(state)
+	MainSection:NewToggle("Steal Gold (Teleports)", "RAAAAHHHHHH", function(state)
+		while state do
+			local UIS = game:GetService("UserInputService")
+			local CF = CFrame.new
+			local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
 
-		local UIS = game:GetService("UserInputService")
-		local CF = CFrame.new
-		local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
-
-		UIS.InputBegan:Connect(function(input, typing)
-			if typing then return end
-			while true do
-				pcall(function()
-					task.wait(.01)
-					local GoldPile = false
-					local CurrentDoor = workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Door")
-					for i,object in ipairs(CurrentDoor.Parent:GetDescendants()) do
-						if object.Name == "GoldPile" then
-							GoldPile = object
-				    			game.Players.LocalPlayer.Character:PivotTo(CF(GoldPile.Hitbox.Position))
-						    	task.wait(.2)
-						    	fireproximityprompt(GoldPile.LootPrompt)
+			UIS.InputBegan:Connect(function(input, typing)
+				if typing then return end
+				while true do
+					pcall(function()
+						task.wait(.01)
+						local GoldPile = false
+						local CurrentDoor = workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Door")
+						for i,object in ipairs(CurrentDoor.Parent:GetDescendants()) do
+							if object.Name == "GoldPile" then
+								GoldPile = object
+								game.Players.LocalPlayer.Character:PivotTo(CF(GoldPile.Hitbox.Position))
+								task.wait(.2)
+								fireproximityprompt(GoldPile.LootPrompt)
+							end
 						end
-					end
-				end)
-			end
-		end)
+					end)
+				end
+			end)
+		else
+			break	
+		end
 	end)
 
 	MainSection:NewToggle("Skip Level (H)", "MMMMM", function(t)
