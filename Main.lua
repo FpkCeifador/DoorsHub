@@ -1158,7 +1158,7 @@ if game.PlaceId == 6839171747 then
 	
     visSection:NewButton("Apply Name Esp", "okie", function()
         local esp_settings = { ---- table for esp settings 
-            textsize = 10,
+            textsize = 20,
             colour = 255,255,255
         }
         
