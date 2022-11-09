@@ -1040,7 +1040,8 @@ if game.PlaceId == 6839171747 then
 	    Chams_Transparency = 0.1,
 	    Chams_Glow_Color = Color3.fromRGB(255,0,0)
 	}
-
+	v.Chams:Destroy()
+	v.Glow:Destroy()
 	function destroy_chams(char)
 
 	    for k,v in next, char:GetChildren() do 
@@ -1152,6 +1153,8 @@ if game.PlaceId == 6839171747 then
 		end
 
 	    end
+	    v.Chams:Destroy()
+	    v.Glow:Destroy()
 
 	end)
     end)
