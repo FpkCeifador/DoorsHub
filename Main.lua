@@ -1215,7 +1215,7 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
 	
     visSection:NewLabel("Key Chams")
 	
-    visSection:NewToggle("Apply Key Chams", "RAAAAHHHHHH", function(state)
+    visSection:NewButton("Apply Key Chams", "RAAAAHHHHHH", function(state)
         local KeyChams = {}    
         local function ApplyKeyChams(inst)
             wait()
@@ -1246,7 +1246,7 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
         coroutine.resume(KeyCoroutine)
     end)
 	
-    visSection:NewToggle("Disable Key Chams", "RAAAAHHHHHH", function(state)
+    visSection:NewButton("Disable Key Chams", "RAAAAHHHHHH", function(state)
         local KeyChams = {}    
         local function ApplyKeyChams(inst)
             wait()
@@ -1279,7 +1279,7 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
 	
     visSection:NewLabel("Book Chams")
 	
-    visSection:NewToggle("Apply Book Chams", "RAAAAHHHHHH", function(state)
+    visSection:NewButton("Apply Book Chams", "RAAAAHHHHHH", function(state)
         local KeyChams = {}    
         local function ApplyKeyChams(inst)
             wait()
@@ -1310,7 +1310,7 @@ if game.PlaceId == 6839171747 or game.PlaceId == 6516141723 then
         coroutine.resume(KeyCoroutine)
     end)
 	
-    visSection:NewToggle("Disable Book Chams", "RAAAAHHHHHH", function(state)
+    visSection:NewButton("Disable Book Chams", "RAAAAHHHHHH", function(state)
         local KeyChams = {}    
         local function ApplyKeyChams(inst)
             wait()
