@@ -1,9 +1,9 @@
 if game.PlaceId == 6516141723 then
 	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 	OrionLib:MakeNotification({
-        	Name = "Warning!",
-                Content = "Avoiding Rush. Please wait.",
-                Time = 5
+        	Name = "Error!",
+                Content = "Join A Game Lobby First.",
+                Time = 10
         })
 end
 
