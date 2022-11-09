@@ -170,16 +170,9 @@ if game.PlaceId == 6839171747 then
 					for i,object in ipairs(CurrentDoor.Parent:GetDescendants()) do
 						if object.Name == "GoldPile" then
 							GoldPile = object
-						end
-					end
-					if LatestRoom.Value == 50 then
-						CurrentDoor = workspace.CurrentRooms[tostring(LatestRoom.Value + 1)]:WaitForChild("Door")
-						game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
-					else
-						if GoldPile then
-							game.Players.LocalPlayer.Character:PivotTo(CF(GoldPile.Hitbox.Position))
-							task.wait(.3)
-							fireproximityprompt(GoldPile.LootPrompt)
+				    			game.Players.LocalPlayer.Character:PivotTo(CF(GoldPile.Hitbox.Position))
+						    	task.wait(.2)
+						    	fireproximityprompt(GoldPile.LootPrompt)
 						end
 					end
 				end)
