@@ -1419,6 +1419,20 @@ if game.PlaceId == 6839171747 then
         end
         coroutine.resume(KeyCoroutine)
     end)
+	
+    visSection:NewLabel("Other")
+	
+    visSection:NewButton("Fullbright", "YEAH...", function(s)
+		loadstring(game:HttpGet("https://pastebin.com/raw/06iG6YkU", true))()
+	end)
+
+    visSection:NewToggle("Disable Render", "Disables Rendering", function(state)
+        if state then
+            game:GetService("RunService"):Set3dRenderingEnabled(false)
+        else
+            game:GetService("RunService"):Set3dRenderingEnabled(true)
+        end
+    end)
 
     --Other
     local Other = Window:NewTab("Other")
@@ -1502,20 +1516,16 @@ if game.PlaceId == 6839171747 then
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(58.3169441, 41.8983574, -2.42302418, 1, 0, 0, 0, 1, 0, 0, 0, 1)
     end)
     
-    local World = Window:NewTab("World")
-    local WorldSection = World:NewSection("World")
-    
-	WorldSection:NewButton("Fullbright", "YEAH...", function(s)
-		loadstring(game:HttpGet("https://pastebin.com/raw/06iG6YkU", true))()
-	end)
-
-    WorldSection:NewToggle("Disable Render", "Disables Rendering", function(state)
-        if state then
-            game:GetService("RunService"):Set3dRenderingEnabled(false)
-        else
-            game:GetService("RunService"):Set3dRenderingEnabled(true)
-        end
+    local fn = Window:NewTab("Fun")
+    local fnSection = fn:NewSection("Fun")
+	
+    fnSection:NewButton("Goofy Walk", "dddddddd", function(txt)
+        local anim = Instance.new("Animation")
+	anim.AnimationId = "rbxassetid://507785072"
+	local track = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+	track:Play()
     end)
+    
     
     local Hub = Window:NewTab("Hub")
     local HubSection = Hub:NewSection("Hub")
