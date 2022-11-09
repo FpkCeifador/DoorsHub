@@ -155,7 +155,6 @@ if game.PlaceId == 6839171747 then
         	end 
 	end)
 	MainSection:NewButton("Steal Gold", "RAAAAHHHHHH", function(state)
-		local Keybind = Enum.KeyCode.G
 
 		local UIS = game:GetService("UserInputService")
 		local CF = CFrame.new
@@ -165,7 +164,7 @@ if game.PlaceId == 6839171747 then
 			if typing then return end
 			while true do
 				pcall(function()
-					wait(0.01)
+					task.wait(.01)
 					local GoldPile = false
 					local CurrentDoor = workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Door")
 					for i,object in ipairs(CurrentDoor.Parent:GetDescendants()) do
