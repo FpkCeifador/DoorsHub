@@ -908,7 +908,7 @@ if game.PlaceId == 6839171747 then
 	    ESP_TeamCheck = false,
 	    Chams = true,
 	    Chams_Color = Color3.fromRGB(0,0,255),
-	    Chams_Transparency = 1,
+	    Chams_Transparency = 0.99,
 	    Chams_Glow_Color = Color3.fromRGB(0,255,0)
 	}
 
@@ -961,7 +961,7 @@ if game.PlaceId == 6839171747 then
 
 						local chams_box = Instance.new("BoxHandleAdornment", b)
 						chams_box.Name = "Chams"
-						chams_box.AlwaysOnTop = true 
+						chams_box.AlwaysOnTop = false 
 						chams_box.ZIndex = 4 
 						chams_box.Adornee = b 
 						chams_box.Color3 = settings_tbl.Chams_Color
@@ -970,7 +970,7 @@ if game.PlaceId == 6839171747 then
 
 						local glow_box = Instance.new("BoxHandleAdornment", b)
 						glow_box.Name = "Glow"
-						glow_box.AlwaysOnTop = false 
+						glow_box.AlwaysOnTop = true 
 						glow_box.ZIndex = 3 
 						glow_box.Adornee = b 
 						glow_box.Color3 = settings_tbl.Chams_Glow_Color
@@ -1028,6 +1028,8 @@ if game.PlaceId == 6839171747 then
     end)
 
     visSection:NewButton("Disable Player Chams", "ye", function()
+	v.Chams:Destroy()
+	v.Glow:Destroy()
         local dwEntities = game:GetService("Players")
 	local dwLocalPlayer = dwEntities.LocalPlayer 
 	local dwRunService = game:GetService("RunService")
@@ -1091,7 +1093,7 @@ if game.PlaceId == 6839171747 then
 
 						local chams_box = Instance.new("BoxHandleAdornment", b)
 						chams_box.Name = "Chams"
-						chams_box.AlwaysOnTop = true 
+						chams_box.AlwaysOnTop = false
 						chams_box.ZIndex = 4 
 						chams_box.Adornee = b 
 						chams_box.Color3 = settings_tbl.Chams_Color
@@ -1100,7 +1102,7 @@ if game.PlaceId == 6839171747 then
 
 						local glow_box = Instance.new("BoxHandleAdornment", b)
 						glow_box.Name = "Glow"
-						glow_box.AlwaysOnTop = false 
+						glow_box.AlwaysOnTop = true
 						glow_box.ZIndex = 3 
 						glow_box.Adornee = b 
 						glow_box.Color3 = settings_tbl.Chams_Glow_Color
